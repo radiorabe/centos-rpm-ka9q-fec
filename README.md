@@ -1,4 +1,4 @@
-# centos-rpm-ka9q-fec
+# centos-rpm-libfec-odr
 CentOS 7 RPM Specfile for [Opendigitalradio's fork of KA9Q's FEC library](https://github.com/Opendigitalradio/ka9q-fec) which is part of [RaBe's DAB / DAB+ broadcasting package collection](https://build.opensuse.org/project/show/home:radiorabe:dab).
 
 ## Usage
