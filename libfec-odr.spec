@@ -1,19 +1,16 @@
-# Note, that at the time of writing there was no proper release available,
-# and also no hint from which original version the project was forked.
-# That's why a specific Git commit is used instead.
-%global commit0 52067f27f33e9147b46d5b21793eaca1e803d3ff
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global reponame ka9q-fec
+%global upstream_version 3.0.1-odr1
+
 
 Name:           libfec-odr
-Version:        0
-Release:        0.1.%{shortcommit0}%{?dist}
+Version:        3.0.1.odr1
+Release:        0%{?dist}
 Summary:        Opendigitalradio's fork of KA9Q's FEC library
 
 License:        LGPLv2+ 
 Group:          System Environment/Libraries
 URL:            https://github.com/Opendigitalradio/%{reponame}
-Source0:        https://github.com/Opendigitalradio/%{reponame}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0:        https://github.com/Opendigitalradio/%{reponame}/archive/v%{upstream_version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
 #Requires:       
@@ -35,7 +32,7 @@ developing applications that use %{name}.
 
 
 %prep
-%autosetup -n %{reponame}-%{commit0}
+%autosetup -n %{reponame}-%{upstream_version}
 
 
 %build
@@ -68,5 +65,8 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Fri Aug 19 2016 Christian Affolter <c.affolter@purplehaze.ch> - 3.0.1.odr1-0
+- Switched from Git to first upstream release
+
 * Thu Aug 18 2016 Christian Affolter <c.affolter@purplehaze.ch> - 0-0.1.52067f2
 - Initial release
